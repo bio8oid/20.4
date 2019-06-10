@@ -24,7 +24,7 @@ class App extends React.Component {
     render() {
         return (
             <div className={style.TodoApp}>
-                Tutaj pojawią się komponenty naszej aplikacji.
+                Balonik dmuchany
             </div>
         );
     }
