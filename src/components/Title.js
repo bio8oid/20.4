@@ -1,11 +1,10 @@
 import React from 'react';
-import style from './Title.css';
 
-const Title = props => <h1>{props.title}</h1>
 
-			<div className={style.TitleApp}>
-                ToDo
+const Title = props => 
+
+			<div>
+                <h3>ToDo</h3>
             </div>
-
 
 export default Title;

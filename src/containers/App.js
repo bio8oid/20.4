@@ -1,6 +1,8 @@
 import React from 'react';
 import uuid from 'uuid';
 import style from './App.css';
+import stylish from '../components/TitleApp.css';
+import Title from '../components/Title.js';
 
 class App extends React.Component {
     constructor(props){
@@ -9,23 +11,27 @@ class App extends React.Component {
             data: []
         };
     }
+
     addTodo(val){
         const todo = {
             text: val,
             id: uuid.v4(),
         };
+
         const data = [...this.state.data, todo];
         this.setState({data});
     }
+
     removeTodo(id) {
         const remainder = this.state.data.filter(todo => todo.id !== id);
         this.setState({data: remainder});
     }
+
     render() {
         return (
-            <div className={style.TodoApp}>
-                Balonik dmuchany
-            </div>
+                <div className={style.TodoApp}>
+                     <Title/><span className={stylish.TitleApp}>({this.state.data.length})</span>
+                </div>
         );
     }
 
