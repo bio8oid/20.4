@@ -1,14 +1,18 @@
 const path = require('path');
 
-module.exports = {
-    
-    entry: './src/index.js',
+module.exports = (env) => {
+    const environment = env || 'production';
+
+    return {
+        mode: environment,
+        entry: './src/containers/app.js',
         output: {
-        path: path.resolve(__dirname, 'build'),
-        filename: 'app.bundle.js'
-    },
-    module: {
-        rules: [
+            path: path.resolve(__dirname, 'build'),
+            filename: 'app.' + environment + '.bundle.js'
+        },
+
+        module: {
+            rules: [
             {
                 test: /\.js$/,
                 loader: "babel-loader"
@@ -16,16 +20,17 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [
-                    { loader: 'style-loader'},
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            modules: true
-                        }
+                { loader: 'style-loader'},
+                {
+                    loader: 'css-loader',
+                    options: {
+                        modules: true
                     }
+                }
                 ]
             }
 
-        ]
+            ]
+        }
     }
 };
