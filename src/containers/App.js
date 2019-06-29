@@ -1,14 +1,32 @@
 import React from 'react';
 import uuid from 'uuid';
+import { hot } from 'react-hot-loader';
 import style from './App.css';
-import stylish from '../components/TitleApp.css';
 import Title from '../components/Title.js';
+import stylish from '../components/Title.css';
+import TodoList from '../components/TodoList.js';
+import todostyle from '../components/TodoList.css';
+
 
 class App extends React.Component {
     constructor(props){
         super(props);
+
         this.state = {
-            data: []
+            data: [
+            {
+                id: 1,
+                text: 'clean broom'
+            }, 
+            {
+                id: 2,
+                text: 'watch the dishes'
+            }, 
+            {
+                id: 3,
+                text: 'feed my cock'
+            }
+            ]
         };
     }
 
@@ -18,7 +36,7 @@ class App extends React.Component {
             id: uuid.v4(),
         };
 
-        const data = [...this.state.data, todo];
+        let data = [...this.state.data, todo];
         this.setState({data});
     }
 
@@ -28,13 +46,20 @@ class App extends React.Component {
     }
 
     render() {
+
         return (
-                <div className={style.TodoApp}>
-                     <Title/><span className={stylish.TitleApp}>({this.state.data.length})</span>
+                <div className={style.App}>
+                    <div className={stylish.Title}>
+                        <Title/><span >({this.state.data.length})</span>
+                    </div>
+                    <div>{this.state.data.map(item => (<TodoList className={todostyle.TodoList} key={item.id} text={item.text} /> ))}</div>
                 </div>
         );
     }
 
 }
 
-export default App;
+export default hot(module)(App);
+
+
+//Nie wiem jak zniknąc element listy

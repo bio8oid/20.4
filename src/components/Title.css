@@ -1,0 +1,11 @@
+
+.Title {
+    color: #d63031;
+    display: flex;
+}
+
+.Title span {
+	height: 20px;
+	line-height: 75px;
+	padding-left: 10px;
+}
