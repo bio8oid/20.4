@@ -1,5 +1,8 @@
 
 .TodoList {
     display: flex;
+}
 
+.TodoList > div {
+    margin: 10px;
 }

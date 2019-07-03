@@ -3,9 +3,7 @@ import uuid from 'uuid';
 import { hot } from 'react-hot-loader';
 import style from './App.css';
 import Title from '../components/Title.js';
-import stylish from '../components/Title.css';
 import TodoList from '../components/TodoList.js';
-import todostyle from '../components/TodoList.css';
 
 
 class App extends React.Component {
@@ -36,11 +34,11 @@ class App extends React.Component {
             id: uuid.v4(),
         };
 
-        let data = [...this.state.data, todo];
+        const data = [...this.state.data, todo];
         this.setState({data});
     }
 
-    removeTodo(id) {
+    removeTodo = id => {
         const remainder = this.state.data.filter(todo => todo.id !== id);
         this.setState({data: remainder});
     }
@@ -49,17 +47,11 @@ class App extends React.Component {
 
         return (
                 <div className={style.App}>
-                    <div className={stylish.Title}>
-                        <Title/><span >({this.state.data.length})</span>
-                    </div>
-                    <div>{this.state.data.map(item => (<TodoList className={todostyle.TodoList} key={item.id} text={item.text} /> ))}</div>
+                    <Title title={'To DO'} counter={this.state.data.length}/>
+                    <TodoList tasks={this.state.data} onClick={this.removeTodo}/>
                 </div>
         );
     }
-
 }
 
 export default hot(module)(App);
-
-
-//Nie wiem jak zniknąc element listy

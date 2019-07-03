@@ -1,14 +1,20 @@
 import React from 'react';
+import todostyle from '../components/TodoList.css';
 
 
-const TodoList = props => (
+const TodoList = props => 
 
-          <div>
-            {props.id}
-            {props.text}
-          </div>
-          
-        );
+  <>
+    {props.tasks.map(todo => 
 
+    <div key={todo.id} 
+    className={todostyle.TodoList} 
+    onClick={() => {props.onClick(todo.id) }}>
+      <div>{todo.id}</div>
+      <div>{todo.text}</div>
+    </div>  
+
+    )}
+  </>
 
 export default TodoList;
