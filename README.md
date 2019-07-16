@@ -1,3 +1,13 @@
 # 20.5
 
-**Change configuration settings**
+
+
+_Add_
+
+```"start": "webpack --mode development"```
+
+_and_
+
+```"build": "webpack --mode production"```
+
+_scripts to better control working environment_
