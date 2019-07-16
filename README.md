@@ -11,12 +11,12 @@
 
 ## _branch_ 20.6 => 
 
-[Add TodoList and remove method](https://5d2e1be846a24f017ad73287--admiring-joliot-5d1d83.netlify.com/)
+[Add TodoList and remove method](https://github.com/bio8oid/20.4/tree/20.6)
 
 
 ## _branch_ 20.7 => 
 
-[Add Hot Module Replacement](https://github.com/bio8oid/20.4/blob/20.7)
+[Add Hot Module Replacement](https://github.com/bio8oid/20.4/tree/20.7)
 
 
 
