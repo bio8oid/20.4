@@ -10,4 +10,4 @@ _and_
 
 ```"build": "webpack --mode production"```
 
-_scripts to better control working environment_
+_scripts to `package.json` file to better control working environment_
